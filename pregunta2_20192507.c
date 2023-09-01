@@ -11,12 +11,18 @@ int main(){
     int numeros_aleatorios[15];
     int suma_divisores;
     int divisores;
+    
+    for (int i = 1; i < 15; i++) {
+        numeros_aleatorios[i] = rand() % 100; // numeros aleatorios de 0 a 100 en el array
+    }
 
+    printf("El arreglo es: ");
+    for (int i = 1; i < 15; i++) {
+        printf("%d ", numeros_aleatorios[i]);
+    }
+    printf("\n\n");
     // Llenamos el array de numeros aleatorios
-    for(int i = 1; i < 15; i++){
-        numeros_aleatorios[i] = rand() % 100;// numeros aleatorios de 0 a 100 en el array 
-        printf("El numero es: %d \n",numeros_aleatorios[i]);
-        
+    for(int i = 1; i < 15; i++){ 
         int j=0;
         suma_divisores=0;
         for (j=1; j<numeros_aleatorios[i];j++){
@@ -24,17 +30,16 @@ int main(){
                 suma_divisores += j;
             }
         }
-        printf("La suma de divisores es: %d \n",suma_divisores );
 
 
         if (suma_divisores<numeros_aleatorios[i]){
-            printf("Numero DEFICIENTE\n");
+            printf("%d - DEFICIENTE",numeros_aleatorios[i]);
         }
-        else if(suma_divisores==numeros_aleatorios[i]){
-            printf("Numero PERFECTO\n");
+        else if(suma_divisores=numeros_aleatorios[i]){
+            printf("%d - PERFECTO",numeros_aleatorios[i]);
         }
         else{
-            printf("Numero ABUNDANTE\n");
+            printf("%d - ABUNDANTE",numeros_aleatorios[i]);
         }
         printf("\n");
     }
